@@ -6,5 +6,3 @@ urlpatterns = [
    path('cats/', cat_list),
    path('hello/', hello),
 ]
-
-

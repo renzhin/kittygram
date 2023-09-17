@@ -9,7 +9,10 @@ from .serializers import CatSerializer
 @api_view(['GET', 'POST'])
 def cat_list(request):
     if request.method == 'POST':
-        serializer = CatSerializer(data=request.data)
+        # Чтобы сериализатор был готов принять список объектов,
+        # в конструктор сериализатора нужно передать
+        # именованный параметр many=True
+        serializer = CatSerializer(data=request.data, many=True)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
@@ -21,8 +24,8 @@ def cat_list(request):
 
 @api_view(['GET', 'POST'])  # Применили декоратор и указали разрешённые методы
 def hello(request):
-    # По задумке, в ответ на POST-запрос нужно вернуть JSON с теми данными, 
+    # По задумке, в ответ на POST-запрос нужно вернуть JSON с теми данными,
     # которые получены в запросе.
-    # Для этого в объект Response() передаём словарь request.data. 
+    # Для этого в объект Response() передаём словарь request.data.
     if request.method == 'POST':
         return Response({'message': 'Получены данные', 'data': request.data})
