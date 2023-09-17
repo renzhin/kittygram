@@ -19,13 +19,13 @@ POST http://127.0.0.1:8000/cats/
 Content-Type: application/json
 
 {
-    "name": "Goga",
-    "color": "Grey",
-    "birth_year": 2022
+    "name": "Goga3",
+    "color": "Grey3",
+    "birth_year": 2023
 } 
 
 ###
-
+# Здесь ошибка в дате
 POST http://127.0.0.1:8000/hello/
 Content-Type: application/json
 
@@ -34,4 +34,47 @@ Content-Type: application/json
     "color": "Grey",
     "birth_year": 12.2022,
     "other": "бэ-бэ-бэ"
+} 
+
+###
+# ЗАгружаем пакетно, если serializer = CatSerializer(data=request.data, many=True)
+POST http://127.0.0.1:8000/cats/
+Content-Type: application/json
+
+[
+    {
+        "name": "Стёп2",
+        "color": "белый",
+        "birth_year": 1971
+    },
+    {
+        "name": "Мурка2",
+        "color": "рыжий",
+        "birth_year": 2010
+    },
+    {
+        "name": "Пушок2",
+        "color": "чёрный",
+        "birth_year": 2018
+    }
+] 
+
+###
+# работаем с обновлением объекта через cat_update
+POST http://127.0.0.1:8000/cat_update/1/
+Content-Type: application/json
+
+{
+    "name": "Pushok",
+    "color": "WhiteHouse",
+    "birth_year": 2019
+} 
+
+###
+# работаем с обновлением объекта через cat_patch
+PATCH http://127.0.0.1:8000/cat_patch/1/
+Content-Type: application/json
+
+{
+    "color": "WhiteBlack",
 } 
