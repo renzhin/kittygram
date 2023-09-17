@@ -1,0 +1,37 @@
+# пример GET запроса
+
+GET http://127.0.0.1:8000/cats/
+
+###
+
+POST http://127.0.0.1:8000/cats/
+Content-Type: application/json
+
+{
+    "name": "Goga",
+    "color": "Grey",
+    "birth_year": 12.2022
+} 
+
+###
+
+POST http://127.0.0.1:8000/cats/
+Content-Type: application/json
+
+{
+    "name": "Goga",
+    "color": "Grey",
+    "birth_year": 2022
+} 
+
+###
+
+POST http://127.0.0.1:8000/hello/
+Content-Type: application/json
+
+{
+    "name": "Goga",
+    "color": "Grey",
+    "birth_year": 12.2022,
+    "other": "бэ-бэ-бэ"
+} 
