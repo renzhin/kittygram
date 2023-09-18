@@ -72,9 +72,9 @@ Content-Type: application/json
 
 ###
 # работаем с обновлением объекта через cat_patch
-PATCH http://127.0.0.1:8000/cat_patch/1/
+PATCH http://127.0.0.1:8000/cats/1/
 Content-Type: application/json
 
 {
-    "color": "WhiteBlack",
+    "color": "WhiteBlack"
 } 
