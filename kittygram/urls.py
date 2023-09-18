@@ -29,3 +29,15 @@ urlpatterns = [
 #    path('cat_update/<int:id>/', cat_update),
 #    path('cat_patch/<int:id>/', cat_patch),
 # ]
+
+
+
+
+# from django.urls import path
+# # Импортируйте необходимые view-функции
+# from posts.views import api_posts, api_posts_detail
+
+# urlpatterns = [
+#     path('api/v1/posts/', api_posts),
+#     path('api/v1/posts/<int:pk>/', api_posts_detail)
+# ]
